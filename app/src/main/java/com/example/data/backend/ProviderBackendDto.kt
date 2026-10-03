@@ -1,0 +1,87 @@
+package com.example.data.backend
+
+import com.example.data.model.ServiceProviderEntity
+import com.squareup.moshi.JsonClass
+
+/**
+ * Data transfer object representing service provider business information stored in the backend cloud database.
+ */
+@JsonClass(generateAdapter = true)
+data class ProviderBackendDto(
+    val id: Long = 0L,
+    val userId: Long? = null,
+    val username: String? = null,
+    val businessName: String = "",
+    val providerName: String = "",
+    val serviceCategory: String = "",
+    val city: String = "",
+    val district: String = "",
+    val address: String = "",
+    val phoneNumber: String = "",
+    val whatsappNumber: String = "",
+    val description: String = "",
+    val pricingInfo: String = "",
+    val yearsOfExperience: Int = 0,
+    val rating: Double = 0.0,
+    val reviewCount: Int = 0,
+    val isVerified: Boolean = false,
+    val isAvailable: Boolean = true,
+    val businessRegNo: String? = null,
+    val businessEmail: String? = null,
+    val openingHours: String = "",
+    val servicesOffered: String? = null,
+    val photo1: String? = null,
+    val photo2: String? = null,
+    val photo3: String? = null,
+    val googleMapLink: String? = null,
+    val latitude: Double = 0.0,
+    val longitude: Double = 0.0,
+    val shopTagline: String? = null,
+    val shopThemeColor: String = "Gold",
+    val shopBannerStyle: String = "Modern Gradient",
+    val specialtyBadges: String? = null,
+    val ownerName: String? = null,
+    val ownerTitle: String? = null,
+    val ownerBio: String? = null,
+    val ownerMotto: String? = null,
+    val lastSyncedAt: Long = System.currentTimeMillis()
+)
+
+fun ServiceProviderEntity.toBackendDto(): ProviderBackendDto = ProviderBackendDto(
+    id = id,
+    userId = userId,
+    username = username,
+    businessName = businessName,
+    providerName = providerName,
+    serviceCategory = serviceCategory,
+    city = city,
+    district = district,
+    address = address,
+    phoneNumber = phoneNumber,
+    whatsappNumber = whatsappNumber,
+    description = description,
+    pricingInfo = pricingInfo,
+    yearsOfExperience = yearsOfExperience,
+    rating = rating,
+    reviewCount = reviewCount,
+    isVerified = isVerified,
+    isAvailable = isAvailable,
+    businessRegNo = businessRegNo,
+    businessEmail = businessEmail,
+    openingHours = openingHours,
+    servicesOffered = servicesOffered,
+    photo1 = photo1,
+    photo2 = photo2,
+    photo3 = photo3,
+    googleMapLink = googleMapLink,
+    latitude = latitude,
+    longitude = longitude,
+    shopTagline = shopTagline,
+    shopThemeColor = shopThemeColor,
+    shopBannerStyle = shopBannerStyle,
+    specialtyBadges = specialtyBadges,
+    ownerName = ownerName,
+    ownerTitle = ownerTitle,
+    ownerBio = ownerBio,
+    ownerMotto = ownerMotto
+)
